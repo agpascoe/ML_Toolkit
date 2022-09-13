@@ -1,0 +1,33 @@
+running bdist
+running bdist_dumb
+running build
+running build_py
+installing to build/bdist.macosx-10.9-x86_64/dumb
+running install
+running install_lib
+creating build/bdist.macosx-10.9-x86_64/dumb
+creating build/bdist.macosx-10.9-x86_64/dumb/Users
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages
+creating build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit
+copying build/lib/ml_toolkit/myfunctions.py -> build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit
+copying build/lib/ml_toolkit/__init__.py -> build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit
+byte-compiling build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit/myfunctions.py to myfunctions.cpython-37.pyc
+byte-compiling build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit/__init__.py to __init__.cpython-37.pyc
+running install_egg_info
+running egg_info
+writing ml_toolkit.egg-info/PKG-INFO
+writing dependency_links to ml_toolkit.egg-info/dependency_links.txt
+writing top-level names to ml_toolkit.egg-info/top_level.txt
+reading manifest file 'ml_toolkit.egg-info/SOURCES.txt'
+writing manifest file 'ml_toolkit.egg-info/SOURCES.txt'
+Copying ml_toolkit.egg-info to build/bdist.macosx-10.9-x86_64/dumb/Users/agpascoemacmini3/opt/anaconda3/envs/ML/lib/python3.7/site-packages/ml_toolkit-0.1.0-py3.7.egg-info
+running install_scripts
+Creating tar archive
+removing 'build/bdist.macosx-10.9-x86_64/dumb' (and everything under it)
