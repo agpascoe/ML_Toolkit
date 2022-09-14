@@ -1,0 +1,9 @@
+How to create a pyhton own_lib
+   $python setup.py bdist_wheel
+   $pip install /path/to/dist/mylib.whl
+   
+   > import mylib
+   > from mylib import myfunction
+   
+   ref: https://medium.com/analytics-vidhya/how-to-create-a-python-library-7d5aea80cc3f
+
