@@ -1,0 +1,15 @@
+How to interact with a jupyter lab server in a ubunto remote computer
+** once ubuntu server can receive ssh sesions
+** once ubuntu server jupyter-lab is running with $jupyter lab
+
+** open a remote session
+  $ssh -L 8080.Localhost:8080 jagpascoe@ip_dir
+  ** you can get ip_dir from server with $ip a
+  
+** run a jupyter lab session remotely
+  $jupyter lab --no-browser --port=8080
+
+** open browser in local computer
+  https://127.0.0.1:8080 with token you need to take from the server session initiated
+  
+  
