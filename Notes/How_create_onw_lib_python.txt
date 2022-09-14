@@ -1,7 +1,14 @@
 How to create a pyhton own_lib
-   $python setup.py bdist_wheel
+  ** tools instalation
+  $pip install wheel
+  $pip install setuptools
+  $pip install twine
+  
+  ** compiling libs
+  $python setup.py bdist_wheel
    $pip install /path/to/dist/mylib.whl
    
+   ** importing libs
    > import mylib
    > from mylib import myfunction
    
