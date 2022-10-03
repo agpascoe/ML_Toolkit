@@ -1,4 +1,4 @@
-#Importing libraries
+# Importing libraries
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -10,17 +10,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from IPython import display
 
-def createData(nPerClust = 300, blur = 1):
+
+def createData(nPerClust = 300, blur = 1, Centroids=[]):
     
-    A = [ 1, 1 ]
-    B = [ 5, 1 ]
-    C = [ 4, 3 ]
+    #A = [ 1, 1 ]
+    #B = [ 5, 1 ]
+    #C = [ 4, 3 ]
 
     # generate data
-    a = [ A[0]+np.random.randn(nPerClust)*blur , A[1]+np.random.randn(nPerClust)*blur ]
-    b = [ B[0]+np.random.randn(nPerClust)*blur , B[1]+np.random.randn(nPerClust)*blur ]
-    c = [ C[0]+np.random.randn(nPerClust)*blur , C[1]+np.random.randn(nPerClust)*blur ]
-
+    a = [ Centroids[0][0]+np.random.randn(nPerClust)*blur , Centroids[0][1]+np.random.randn(nPerClust)*blur ]
+    b = [ Centroids[1][0]+np.random.randn(nPerClust)*blur , Centroids[1][1]+np.random.randn(nPerClust)*blur ]
+    c = [ Centroids[2][0]+np.random.randn(nPerClust)*blur , Centroids[2][1]+np.random.randn(nPerClust)*blur ]
+ 
     # true labels
     labels_np = np.hstack((  np.zeros((nPerClust)),
                             np.ones( (nPerClust)),
@@ -40,12 +41,15 @@ def createData(nPerClust = 300, blur = 1):
     for i in range(len(data)):
         plt.plot([0,data[i,0]],[0,data[i,1]],color=color[labels[i]],alpha=.2)
 
-    plt.plot(data[np.where(labels==0)[0],0],data[np.where(labels==0)[0],1],'bs',alpha=.5)
-    plt.plot(data[np.where(labels==1)[0],0],data[np.where(labels==1)[0],1],'ko',alpha=.5)
-    plt.plot(data[np.where(labels==2)[0],0],data[np.where(labels==2)[0],1],'r^',alpha=.5)
+    plt.plot(data[np.where(labels==0)[0],0],data[np.where(labels==0)[0],1],'s',alpha=.5)
+    plt.plot(data[np.where(labels==1)[0],0],data[np.where(labels==1)[0],1],'o',alpha=.5)
+    plt.plot(data[np.where(labels==2)[0],0],data[np.where(labels==2)[0],1],'r',alpha=.5)
 
     plt.grid(color=[.9,.9,.9])
     plt.title('The qwerties!')
     plt.xlabel('qwerty dimension 1')
     plt.ylabel('qwerty dimension 2')
     plt.show()  
+
+
+createData(nPerClust=200, blur=1, Centroids=[[1,1],[5,1],[4,3]])

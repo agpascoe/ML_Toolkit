@@ -41,9 +41,9 @@ def createData(nPerClust = 300, blur = 1, Centroids=[]):
     for i in range(len(data)):
         plt.plot([0,data[i,0]],[0,data[i,1]],color=color[labels[i]],alpha=.2)
 
-    plt.plot(data[np.where(labels==0)[0],0],data[np.where(labels==0)[0],1],'bs',alpha=.5)
-    plt.plot(data[np.where(labels==1)[0],0],data[np.where(labels==1)[0],1],'ko',alpha=.5)
-    plt.plot(data[np.where(labels==2)[0],0],data[np.where(labels==2)[0],1],'r^',alpha=.5)
+    plt.plot(data[np.where(labels==0)[0],0],data[np.where(labels==0)[0],1],'s',alpha=.5)
+    plt.plot(data[np.where(labels==1)[0],0],data[np.where(labels==1)[0],1],'o',alpha=.5)
+    plt.plot(data[np.where(labels==2)[0],0],data[np.where(labels==2)[0],1],'r',alpha=.5)
 
     plt.grid(color=[.9,.9,.9])
     plt.title('The qwerties!')
