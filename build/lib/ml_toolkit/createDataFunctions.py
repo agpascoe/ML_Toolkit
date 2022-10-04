@@ -13,7 +13,7 @@ from IPython import display
 display.set_matplotlib_formats('svg')
 
 
-def createQwerties(clusters=1, nPerClust=100, blur=0.5, centroids=[(0,0)],  draw=True):
+def createQwerties(clusters=1, nPerClust=100, blur=0.5, centroids=np.array([[0,0]]),  draw=True):
  
   # create data
   data_np = np.reshape(np.zeros(clusters*2*nPerClust),(nPerClust*clusters,2))
