@@ -14,7 +14,22 @@ display.set_matplotlib_formats('svg')
 
 
 def createQwerties(clusters=1, nPerClust=100, blur=0.5, centroids=np.array([[0,0]]),  draw=True):
- 
+  '''
+  This function builds a set of data in up to 4 qwerties or clusters, each one with nPerclust points.
+  The centroids of the qwerties is given by a np array of point (elements). Blur is a parameter that close up or not the qwerties,
+  playing as a noice to each point.
+
+   for example, to create a set of 200 points in two qwerties, with some intersection:
+  createQwerties( clusters=2,
+                   nPerClust = 100,
+                  blur = 1.5,
+                  centroids = np.array([[3,3],[5,3]]),
+                  draw = True)
+  
+  The draw parameter indicates if the functions displays a graph of the querties distribution ot not.
+  This function returns two datasets of points, and labels.
+  
+  '''
   # create data
   data_np = np.reshape(np.zeros(clusters*2*nPerClust),(nPerClust*clusters,2))
   labels_np =np.zeros(clusters*nPerClust) 
