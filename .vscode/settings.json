@@ -1,3 +1,6 @@
 {
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "html.format.indentHandlebars": true,
+    "editor.find.autoFindInSelection": "always",
+    "editor.formatOnType": true
 }
