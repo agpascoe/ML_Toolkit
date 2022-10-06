@@ -11,6 +11,39 @@ from IPython import display
 display.set_matplotlib_formats('svg')
 
 
+def plot_classModelDecisionMap(model, X, y, granuality=100):
+  """
+  Plots a map that shows how the model has defined the respectives areas of classification in a 2d plane
+  X, y must be np array of dimenssion (,2), and (,n), where n depends upon how many classifications are
+
+  This code was modified from other in https://github.com/mrdbourke/tensorflow-deep-learning/blob/main/02_neural_network_classification_in_tensorflow.ipynb
+  """
+  # Define the axis boundaries of the plot and create a meshgrid
+  x_min, x_max = X[:, 0].min() - 0.1, X[:, 0].max() + 0.1
+  y_min, y_max = X[:, 1].min() - 0.1, X[:, 1].max() + 0.1
+  xx, yy = np.meshgrid(np.linspace(x_min, x_max, granuality),
+                       np.linspace(y_min, y_max, granuality))
+  
+  # Create X values (we're going to predict on all of these)
+  x_in = np.c_[xx.ravel(), yy.ravel()] # stack 2D arrays together: https://numpy.org/devdocs/reference/generated/numpy.c_.html
+  # Make predictions using the trained model
+  y_pred = model.predict(x_in)
+  # Check for multi-class
+  
+  if y.shape[1]:
+    print("doing multiclass classification...")
+    # We have to reshape our predictions to get them ready for plotting
+    y_pred = np.argmax(y_pred, axis=1).reshape(xx.shape)
+  else:
+    print("doing binary classifcation...")
+    y_pred = np.round(np.max(y_pred, axis=1)).reshape(xx.shape)
+  
+  # Plot decision boundary
+  plt.contourf(xx, yy, y_pred, cmap=plt.cm.RdYlBu, alpha=0.7)
+  plt.scatter(X[:, 0], X[:, 1], c=np.argmax(y, axis=1), s=40, cmap=plt.cm.RdYlBu)
+  plt.xlim(xx.min(), xx.max())
+  plt.ylim(yy.min(), yy.max())
+
 def createQwerties(clusters=1, nPerClust=100, blur=0.5, centroids=[[0,0]],  draw=True):
   '''
   This function builds a set of data in up to 4 qwerties or clusters, each one with nPerclust points.
