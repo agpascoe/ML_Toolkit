@@ -1,4 +1,4 @@
-##This pretends to be a machine learning toolkit. With several used routines in ML experiments as:
+# This pretends to be a machine learning toolkit. With several used routines in ML experiments as:
 
 **def plot_classModelDecisionMap(model, X, y, granuality=100):**
   """
